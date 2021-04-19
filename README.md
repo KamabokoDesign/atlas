@@ -24,9 +24,14 @@ WP Engine's Atlas Headless Framework. This is a tutorial where we start from not
 #
 # NOTE: In order for previews to work you must use NEXT_PUBLIC_WORDPRESS_URL
 
-NEXT_PUBLIC_WORDPRESS_URL=https://localhost:8888/atlas-wp
-# WORDPRESS_URL=https://localhost:8888/atlas-wp
+NEXT_PUBLIC_WORDPRESS_URL=http://localhost:8888/atlas-wp/
+# WORDPRESS_URL=http://localhost:8888/atlas-wp/
 
 # Plugin secret found in WordPress Settings->Headless
 WP_HEADLESS_SECRET=YOUR_PLUGIN_SECRET (copy this from your WP Admin)
 ```
+
+## Step 3
+1. Make sure to redeploy your next.js localhost with `npm run dev`
+1. In WP Admin > Pages > Add New > "Test Page" for example
+1. Now you can go to `http://localhost:3000/test-page` and things should render
