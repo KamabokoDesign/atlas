@@ -35,3 +35,7 @@ WP_HEADLESS_SECRET=YOUR_PLUGIN_SECRET (copy this from your WP Admin)
 1. Make sure to redeploy your next.js localhost with `npm run dev`
 1. In WP Admin > Pages > Add New > "Test Page" for example
 1. Now you can go to `http://localhost:3000/test-page` and things should render
+
+
+## Posts
+WPEngine seems to have really mastered the Posts section of WP + Next integration. When you want to make a new post. You can preview it automatically in the Next.js build, and posts won't be public until you publish them! Yes and yes.
