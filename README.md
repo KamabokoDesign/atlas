@@ -39,3 +39,9 @@ WP_HEADLESS_SECRET=YOUR_PLUGIN_SECRET (copy this from your WP Admin)
 
 ## Posts
 WPEngine seems to have really mastered the Posts section of WP + Next integration. When you want to make a new post. You can preview it automatically in the Next.js build, and posts won't be public until you publish them! Yes and yes.
+
+## Step 4
+1. Dev vs. Production mode
+1. `npm run build` will build the site statically
+1. `npm start` will be on `localhost:8080` 
+1. So open up your `localhost:8080` and bask in the beauty of React SPA. 
