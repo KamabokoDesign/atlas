@@ -119,7 +119,7 @@ const authorsQuery = gql`
  3.  To display info from that, you can also put
 
 
-## To make your own pages
+## To make pages static
 
  ```
  export async function getStaticProps(context: GetStaticPropsContext) {
