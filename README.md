@@ -65,4 +65,69 @@ export default AuthorsPage;
 1. Go to page `localhost:3000/authors` should work
 
 ## Grabbing data from GraphQL
-1. Go back to WP and enter the GraphQL site
+1. See the WP specifics here
+2. But you can do something like this, in say an authors.tsx page:
+
+```
+import {useQuery, gql} from "@apollo/client";
+
+const authorsQuery = gql`
+ {
+  users {
+   nodes {
+    avatar {
+     url
+    }
+    firstName
+    lastName
+    roles {
+     nodes {
+     displayName
+     }
+    }
+   }
+  }
+ }`;
+ 
+ const AuthorsPage = () => {
+  const {data} useQuery(authorsQuery);
+  const authors = data?.users?.nodes ?? [];
+  
+  return (
+  <>
+  <div>
+   <h1>Authors Page!</h1>
+   <ol>
+    {authors.map((author: any) => (
+     <li>
+      <img src={author.avatar.url} alt="" />
+      <p>{author.firstName} {author.lastName}</p>
+     </li>
+    ))}
+   </ol>
+  </div>
+  </>);
+ }
+ 
+ export default AuthorsPage;
+ ```
+ 
+ ## useGeneralSettings hook
+ Another thing that WP Engine has built out is the useGeneralSettings hook. 
+ 
+ 1.  `import {useGeneralSettings} from @wpengine/headless/react`; 
+ 2.  `const settings = useGeneralSettings();`
+ 3.  To display info from that, you can also put
+
+
+## To make your own pages
+
+ ```
+ export async function getStaticProps(context: GetStaticPropsContext) {
+  const client = getApolloClient(context);
+  client.query({
+    query: authorsQuery
+  })
+  return getNextStaticProps(context);
+ }
+ ```
