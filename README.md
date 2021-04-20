@@ -130,3 +130,12 @@ const authorsQuery = gql`
   return getNextStaticProps(context);
  }
  ```
+ 
+ ## package.json
+ Make sure to have the following scripts: 
+ ```
+ "start": "next start -p 8080", 
+ "wpe-build": "next build"
+ ```
+ This is because when atlas gets your code, they run `npm install` and then `wpe-build` and that's how the static pages are built.
+ and then to run the site they do `npm run start`
