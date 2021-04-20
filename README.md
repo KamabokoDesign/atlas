@@ -45,3 +45,24 @@ WPEngine seems to have really mastered the Posts section of WP + Next integratio
 1. `npm run build` will build the site statically
 1. `npm start` will be on `localhost:8080` 
 1. So open up your `localhost:8080` and bask in the beauty of React SPA. 
+
+## Dissecting the WPEngine Next.js theme
+We'll be taking a look into various files within the Next.js template
+
+## [[...page]].tsx
+This is the catch all page. The WP backend will send a client to this page first. 
+
+## Creating a WP Independent Page (i.e. Hardcoded Pages)
+1. Pages > New > authors.tsx
+1. Add this code in authors.tsx
+```
+const AuthorsPage = () => {
+  return <h1>Authors</h1>
+}
+
+export default AuthorsPage;
+```
+1. Go to page `localhost:3000/authors` should work
+
+## Grabbing data from GraphQL
+1. Go back to WP and enter the GraphQL site
